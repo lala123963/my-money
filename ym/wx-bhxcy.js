@@ -1,5 +1,4 @@
-const jsname = '渤海宣传员'
-const $ = new Env(jsname);
+const $ = new Env(渤海宣传员);
 
 let envSplitor = ['\n','@']
 let httpResult, httpReq, httpResp
