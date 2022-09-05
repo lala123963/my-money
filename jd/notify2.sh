@@ -1,9 +1,7 @@
 #!/usr/bin/env bash
 
 Ver="Build 20220314-001-Alpha"
-/*
-cron "1 1 1 1 *" notify2.sh, tag:自定义通知
-*/
+
 ## 导入通用变量与函数
 dir_shell=/ql/shell
 . $dir_shell/share.sh
