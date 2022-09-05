@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 ## 版本号
-Ver="Build 20220405-001-Alpha"
+Ver="Build 2022831-001-Alpha"
 
 ## 导入通用变量与函数
 [[ -d "/ql/shell" ]] && dir_shell=/ql/shell
@@ -9,8 +9,18 @@ Ver="Build 20220405-001-Alpha"
 
 ## emoji 符号及分隔线
 emoji_OK="✅"
-emoji_NO="ߚ뢊emoji_UNKNOW="❓"
-emoji_MSG="ߓᢊemoji_ON="߉ᢊemoji_OFF="߈⢊emoji_NONE="߈꯸emoji_DATE="ߓ梊emoji_SOS="߆袊emoji_CHART="ߓꢊemoji_OUTBOX="ߓ䢊emoji_INBOX="ߓ墊line="————————————————————————————————————————————"
+emoji_NO="🚫"
+emoji_UNKNOW="❓"
+emoji_MSG="📑"
+emoji_ON="🉑"
+emoji_OFF="🈲"
+emoji_NONE="🈚️"
+emoji_DATE="📆"
+emoji_SOS="🆘"
+emoji_CHART="📊"
+emoji_OUTBOX="📤"
+emoji_INBOX="📥"
+line="————————————————————————————————————————————"
 
 ## 获取 token
 get_token() {
@@ -881,7 +891,7 @@ verify_ck(){
                     else
                         remarks_new[$j]="${remarks_id[$j]}@@$timestamp_ms"
                     fi
-                    echo -e "ߧᢀ�쾤{full_name[$j]}"
+                    echo -e "🧑‍🌾${full_name[$j]}"
                     echo -e "${emoji} $wsck_to_ck_msg"
                     ql_add_env_api $ck_api_type JD_COOKIE "${value[i]}" "${remarks_new[$j]}"
                 fi
@@ -898,7 +908,7 @@ verify_ck(){
                 wskey_status_chinese="因$wsck_to_ck_msg跳过检测"
                 emoji=$emoji_MSG
             fi
-            [[ ! ${ck_status[$j]} ]] && echo -n "ߧᢀ�쾤{full_name[$j]}"
+            [[ ! ${ck_status[$j]} ]] && echo -n "🧑‍🌾${full_name[$j]}"
             [[ $notify = on ]] && [[ ${ck_status[$j]} = 1 ]] || [[ ! ${ck_status[$j]} ]] && echo -e "" && echo -n "${emoji} 因$wsck_to_ck_msg，转换JD_COOKIE失败"
         fi
         [[ $notify = on ]] && echo -e "" && echo -n "${emoji} JD_WSCK(wskey)$wskey_status_chinese"
@@ -1134,7 +1144,7 @@ verify_ck(){
         echo ""
         Get_Full_Name $i
         echo -e "$line"
-        echo -e "ߧᢀ�쾤{full_name[$j]} "
+        echo -e "🧑‍🌾${full_name[$j]} "
         check_ck $i on
         check_wskey $i on
         check_validity $i on
@@ -1609,48 +1619,48 @@ content_notify(){
         #done
 
         invalid_all="$(print_array "${ck_invalid[*]}")"
-        [[ $invalid_all ]] && notify_content_invalid_all="ߒ밟⫢쨥䱦刨䦥﷨共${#ck_invalid[@]}个)✨ߒ밟⫝̸n$invalid_all\n"
+        [[ $invalid_all ]] && notify_content_invalid_all="💫💫✨失效账号(共${#ck_invalid[@]}个)✨💫💫\n$invalid_all\n"
         content_1=$notify_content_invalid_all
 
         ck_invalid_this_time_all="$(print_array "${ck_invalid_this_time[*]}")"
-        [[ $ck_invalid_this_time_all ]] && notify_content_ck_invalid_this_time_all="ߒ밟⫢쨦쬦졤process_notify_type_1账号(共${#ck_invalid_this_time[@]}个)✨ߒ밟⫝̸n$ck_invalid_this_time_all\n"
+        [[ $ck_invalid_this_time_all ]] && notify_content_ck_invalid_this_time_all="💫💫✨本次$process_notify_type_1账号(共${#ck_invalid_this_time[@]}个)✨💫💫\n$ck_invalid_this_time_all\n"
         content_2=$notify_content_ck_invalid_this_time_all
 
         ck_added_all="$(print_array "${ck_added[*]}")"
-        [[ $ck_added_all ]] && notify_content_ck_added_all="ߒ밟⫢쨦쬦졦氥➨䦥﷨共${#ck_added[@]}个)✨ߒ밟⫝̸n$ck_added_all\n"
+        [[ $ck_added_all ]] && notify_content_ck_added_all="💫💫✨本次新增账号(共${#ck_added[@]}个)✨💫💫\n$ck_added_all\n"
         content_3=$notify_content_ck_added_all
 
         ck_valid_this_time_all="$(print_array "${ck_valid_this_time[*]}")"
-        [[ $ck_valid_this_time_all ]] && notify_content_ck_valid_this_time_all="ߒ밟⫢쨦쬦졤process_notify_type_0账号(共${#ck_valid_this_time[@]}个)✨ߒ밟⫝̸n$ck_valid_this_time_all\n"
+        [[ $ck_valid_this_time_all ]] && notify_content_ck_valid_this_time_all="💫💫✨本次$process_notify_type_0账号(共${#ck_valid_this_time[@]}个)✨💫💫\n$ck_valid_this_time_all\n"
         content_4=$notify_content_ck_valid_this_time_all
 
         validity_lt_1day_all="$(print_array "${ck_validity_lt_1day[*]}")"
-        [[ $validity_lt_1day_all ]] && notify_content_validity_lt_1day_all="ߒ밟⫢쨨䦥﷦쉦刦쟤荨泱天的账号(共${#ck_validity_lt_1day[@]}个)✨ߒ밟⫝̸n$validity_lt_1day_all\n"
+        [[ $validity_lt_1day_all ]] && notify_content_validity_lt_1day_all="💫💫✨账号有效期不足1天的账号(共${#ck_validity_lt_1day[@]}个)✨💫💫\n$validity_lt_1day_all\n"
         [[ $NOTIFY_VALID_TIME = 1 ]] && content_5=$notify_content_validity_lt_1day_all
 
         wskey_invalid_all="$(print_array "${wskey_invalid[*]}")"
-        #[[ $wskey_invalid_all ]] && notify_content_wskey_invalid_all="ߒ밟⫢쨊D_WSCK(wskey)失效或转换失败的账号(共${#wskey_invalid[@]}个)✨ߒ밟⫝̸n$wskey_invalid_all\n"
-        [[ $wskey_invalid_all ]] && notify_content_wskey_invalid_all="ߒ밟⫢쨊D_WSCK(wskey)失效的账号(共${#wskey_invalid[@]}个)✨ߒ밟⫝̸n$wskey_invalid_all\n"
+        #[[ $wskey_invalid_all ]] && notify_content_wskey_invalid_all="💫💫✨JD_WSCK(wskey)失效或转换失败的账号(共${#wskey_invalid[@]}个)✨💫💫\n$wskey_invalid_all\n"
+        [[ $wskey_invalid_all ]] && notify_content_wskey_invalid_all="💫💫✨JD_WSCK(wskey)失效的账号(共${#wskey_invalid[@]}个)✨💫💫\n$wskey_invalid_all\n"
         [[ $NOTIFY_WSKEY_NO_EXIST = 1 ]] && content_6=$notify_content_wskey_invalid_all
 
         ck_none_wskey_all="$(print_array "${ck_none_wskey[*]}")"
-        [[ $ck_none_wskey_all ]] && notify_content_ck_none_wskey_all="ߒ밟⫢쨦쪥핥奊D_WSCK(wskey)的账号(共${#ck_none_wskey[@]}个)✨ߒ밟⫝̸n$ck_none_wskey_all\n"
+        [[ $ck_none_wskey_all ]] && notify_content_ck_none_wskey_all="💫💫✨未录入JD_WSCK(wskey)的账号(共${#ck_none_wskey[@]}个)✨💫💫\n$ck_none_wskey_all\n"
         [[ $NOTIFY_WSKEY_NO_EXIST = 1 ]] && content_7=$notify_content_ck_none_wskey_all
 
         ck_undocked_uid_all="$(print_array "${ck_undocked_uid[*]}")"
-        [[ $ck_undocked_uid_all ]] && notify_content_ck_undocked_uid_all="ߒ밟⫢쨗xPusher未对接完成的账号(共${#ck_undocked_uid[@]}个)✨ߒ밟⫝̸n$ck_undocked_uid_all\n"
+        [[ $ck_undocked_uid_all ]] && notify_content_ck_undocked_uid_all="💫💫✨WxPusher未对接完成的账号(共${#ck_undocked_uid[@]}个)✨💫💫\n$ck_undocked_uid_all\n"
         [[ $CK_WxPusherUid = 1 ]] && content_8=$notify_content_ck_undocked_uid_all
 
         ck_no_uid_all="$(print_array "${ck_no_uid[*]}")"
-        [[ $ck_no_uid_all ]] && notify_content_ck_no_uid_all="ߒ밟⫢쨦쪥핥套xPusher UID的账号(共${#ck_no_uid[@]}个)✨ߒ밟⫝̸n$ck_no_uid_all\n"
+        [[ $ck_no_uid_all ]] && notify_content_ck_no_uid_all="💫💫✨未录入WxPusher UID的账号(共${#ck_no_uid[@]}个)✨💫💫\n$ck_no_uid_all\n"
         [[ $CK_WxPusherUid = 1 ]] && content_9=$notify_content_ck_no_uid_all
 
         valid_all="$(print_array "${ck_valid[*]}")"
-        [[ $valid_all ]] && notify_content_valid_all="ߒ밟⫢쨦�踨䦥﷨共${#ck_valid[@]}个)✨ߒ밟⫝̸n$valid_all\n"
+        [[ $valid_all ]] && notify_content_valid_all="💫💫✨正常账号(共${#ck_valid[@]}个)✨💫💫\n$valid_all\n"
         [[ $NOTIFY_VALID_CK_TYPE = 2 ]] && content_10=$notify_content_valid_all
 
         validity_all="$(print_array "${ck_validity[*]}")"
-        [[ $validity_all ]] && notify_content_validity="ߒ밟⫢쨩Ω勨䦥﷦쉦刦쟨共${#ck_validity[@]}条)✨ߒ밟⫝̸n$validity_all\n"
+        [[ $validity_all ]] && notify_content_validity="💫💫✨预测账号有效期(共${#ck_validity[@]}条)✨💫💫\n$validity_all\n"
         [[ $NOTIFY_VALID_TIME = 1 ]] && content_11=$notify_content_validity
 
         [[ ${CK_WxPusherUid_Json[*]} ]] && CK_WxPusherUid_Json_All="$(print_array "${CK_WxPusherUid_Json[*]}" | perl -pe '{s|,\\n$|\\n|g; s|{\\n|  {\\n|g; s|\\n}|\\n  }|g}')"
