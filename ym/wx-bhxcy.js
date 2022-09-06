@@ -1,7 +1,7 @@
 /*
 cron "5 1 * * *" wx-bhxcy.js, tag:渤海宣传员
 */
-const $ = new Env(渤海宣传员);
+const $ = new Env('渤海宣传员');
 let envSplitor = ['\n','@']
 let httpResult, httpReq, httpResp
 
