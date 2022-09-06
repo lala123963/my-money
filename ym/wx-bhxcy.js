@@ -1,5 +1,4 @@
-const $ = new Env(渤海宣传员);
-
+const $ = new Env(购渤海宣传员);
 let envSplitor = ['\n','@']
 let httpResult, httpReq, httpResp
 
