@@ -1,4 +1,6 @@
-//5 23 * * * m_jd_farm_automation.js
+/*
+cron "5 23 * * *" zd-fruit.js, tag:东东农村自动化
+*/
 //问题反馈:https://t.me/Wall_E_Channel
 const {Env} = require('./magic');
 const $ = new Env('M农场自动化');
