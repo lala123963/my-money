@@ -3,7 +3,6 @@ cron 10 8 * * * jd_sign_graphics.js
 只支持nodejs环境
 需要安装依赖 
 npm i png-js 或者 npm i png-js -S
-
 */
 
 const Faker = require('./sign_graphics_validate.js')
@@ -31,7 +30,7 @@ let JD_API_HOST = 'https://sendbeans.jd.com'
 const turnTableId = [
    { "name": "翻牌", "id": 1082, "shopid": 1000004123, "url": "https://sendbeans.jd.com/jump/index/" },
    //{ "name": "翻牌", "id": 815, "shopid": 887726, "url": "https://sendbeans.jd.com/jump/index/" },
-   { "name": "翻牌", "id": 1440, "shopid": 1000005670, "url": "https://sendbeans.jd.com/jump/index/" },
+   // { "name": "翻牌", "id": 1440, "shopid": 1000005670, "url": "https://sendbeans.jd.com/jump/index/" },
 ]
 
 !(async () => {
