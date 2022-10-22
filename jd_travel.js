@@ -1,3 +1,10 @@
+/*
+穿行寻宝
+双十一活动
+5 3,10 * * * jd_travel.js
+ */
+
+
 const CryptoJS = require("crypto-js");
 const $ = new Env('穿行寻宝');
 const notify = $.isNode() ? require('./sendNotify') : '';
