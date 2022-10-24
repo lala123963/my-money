@@ -9,17 +9,7 @@
 一天只能帮助3个人。多出的助力码无效
 ==========================Quantumultx=========================
 [task_local]
-#jd免费水果
-5 6-18/6 * * * jd_fruit_task.js, tag=东东农场日常任务, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
-=========================Loon=============================
-[Script]
-cron "5 6-18/6 * * *" script-path=jd_fruit_task.js,tag=东东农场日常任务
-
-=========================Surge============================
-东东农场日常任务 = type=cron,cronexp="5 6-18/6 * * *",wake-system=1,timeout=3600,script-path=jd_fruit_task.js
-
-=========================小火箭===========================
-东东农场日常任务 = type=cron,script-path=jd_fruit_task.js, cronexpr="5 6-18/6 * * *", timeout=3600, enable=true
+1 1 1 1 1 jd_fruit_task.js
 
 export DO_TEN_WATER_AGAIN="" 默认再次浇水
 
@@ -500,10 +490,10 @@ async function doTenWaterAgain() {
             $.done();
             if ($.isNode()) {
                 await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName || $.UserName}水果已可领取`, `京东账号${$.index} ${$.nickName || $.UserName}\n${$.farmInfo.farmUserPro.name}已可领取`);
-            }
+      }
 	  if ($.isNode() && WP_APP_TOKEN_ONE) {
 			await notify.sendNotifybyWxPucher($.name, `【京东账号】${$.nickName || $.UserName}\n【提醒⏰】${$.farmInfo.farmUserPro.name}已可领取\n【领取步骤】京东->我的->东东农场兑换京东红包,可以用于京东app的任意商品.`, `${$.UserName}`);
-		}
+            }
         }
     } else if (overageEnergy >= 10) {
         console.log("目前剩余水滴：【" + totalEnergy + "】g，可继续浇水");
