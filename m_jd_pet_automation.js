@@ -1,4 +1,4 @@
-//40 5,12,21 * * * m_jd_pet_automation.js
+//cron: 40 5,12,21 * * * m_jd_pet_automation.js
 //问题反馈:https://t.me/Wall_E_Channel
 const {Env} = require('./magic');
 const $ = new Env('M萌宠自动化');
