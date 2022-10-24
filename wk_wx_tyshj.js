@@ -1,20 +1,9 @@
 /**
- 作者：临渊
- 日期：8-15
- 小程序：统一快乐星球
+统一快乐星球微信小程序
  入口：活动->山海经
  抓包：tysc.tuoketech.com/unit-one/login/wx/login  这个登录包里 body 部分的 全部
  变量：tyshj='body@xxxx '  多个账号用 @ 或者 换行 分割 
- 定时一天一次
- cron: 11 11 * * *
-
- [task_local]
- #统一山海经
- 11 11 * * * https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyshj.js, tag=统一山海经, enabled=false
- [rewrite_local]
- https://tysc.tuoketech.com/unit-one/login/wx/login url script-request-body https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyshj.js
- [MITM]
- hostname = tysc.tuoketech.com
+ cron: 50 9 * * *
  */
 
  const $ = new Env("统一山海经");

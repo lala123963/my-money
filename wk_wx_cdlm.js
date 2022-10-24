@@ -1,23 +1,8 @@
 /**
- * 脚本地址:  https://raw.githubusercontent.com/yml2213/javascript/master/cdlm/cdlm.js
- * 转载请留信息,谢谢
- * 
- * 吃对了嘛 小程序  
- * cron 35 7 * * *  yml2213_javascript_master/cdlm.js
- *
- * 
- * 5-2		完成 签到 ,转发 , 评论 ,看视频 任务   
- * 5-2  	优化失效提示,测试通知功能
- * 5-2  	优化通知功能
- * 5-6		修复签到 bug
- * 6-19		更新模板
- *
- * ========= 青龙--配置文件 =========
+ * 吃对了嘛微信小程序  
+ * cron: 20 9 * * *
  * 变量格式: export cdlm_data='token1 @ token2'   ,多账号用 换行 或 @ 分割
  * 抓 关键词  ht.chiduilema.com  找到 token 就行了
- * 
- * tg频道: https://t.me/yml2213_tg  
- * tg群组: https://t.me/yml_tg    
  */
 
 const $ = new Env("吃对了嘛");

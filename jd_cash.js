@@ -2,8 +2,9 @@
 签到领现金，每日2毛～5毛
 活动入口：京东APP搜索领现金进入
 无需指定定时，每天运行一次即可
+cron: 16 7 * * *
  */
-const $ = new Env('签到领现金');
+const $ = new Env("签到领现金");
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 

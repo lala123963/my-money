@@ -1,22 +1,9 @@
 /**
- 作者：临渊
- 日期：7-27
- 小程序：统一快乐星球
+ 统一快乐星球微信小程序
  入口：活动->天气情书
  抓包：https://api.xiaoyisz.com/asamu/ga/user/public/api/login  这个登录包里 body 部分的 全部
  变量：tqBody='body@xxxx '  多个账号用 @ 或者 换行 分割
- 定时一天一次
- cron: 10 12 * * *
-
- [task_local]
- #统一天气情书
- 10 12 * * * https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyqs.js, tag=统一天气情书, enabled=true
- [rewrite_local]
- https://api.xiaoyisz.com/asamu/ga/user/public/api/login url script-request-body https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyqs.js
- [MITM]
- hostname = api.xiaoyisz.com
- 
- 8-20 修复了sign error
+ cron: 0 10 * * *
  */
 
 const $ = new Env("统一天气情书");

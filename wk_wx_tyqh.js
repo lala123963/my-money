@@ -1,29 +1,10 @@
 /**
- 作者：临渊
- 日期：6-12
- 小程序：统一快乐星球
+统一快乐星球微信小程序
  入口：活动->种番茄
- 功能：除了助力都能完成
  抓包：api.xiaoyisz.com/qiehuang/ga/public/api/login  这个登录包里 body 部分的 全部
  变量：tybody='body@xxxx '  多个账号用 @ 或者 换行 分割 
  定时一天三次，八个小时一次收取冒险奖励
- cron: 10 12,18 * * *
-
- [task_local]
- #统一茄皇
- 10 12,18 * * *  https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyqh.js, tag=统一茄皇, enabled=true
- [rewrite_local]
- http://api.xiaoyisz.com/qiehuang/ga/public/api/login url script-request-header https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyqh.js
- [MITM]
- hostname = api.xiaoyisz.com
-
- 6-14 更新了AU获取方式，理论上不会过期了
- 6-18 更新了收取植物、种新的植物和推送加上昵称，方便辨认（可能）
- 6-22 修复了上报挑战失败、洒阳光失败，更新了种植进度（免得老有人说脚本坏了）
- 6-24 优化日志，更新了随机UA，可以自己抓 user-agent 填到变量 UA 里面，也可以不填直接改脚本里 uaNum 的数字
- 6-26 移除了开始冒险，加到助力脚本，现在四个号可以两个小时冒险一次
- 6-28 新增偷取好友阳光（出自jujuju大佬）
- 8-11 更新了sign
+ cron: 10 */8 * * *
  */
 
  const $ = new Env("统一茄皇");

@@ -1,15 +1,10 @@
 /**
- 作者： 临渊
- 日期： 8-28
  软件： edifier connect
  变量： mbzAPP：账号&密码  多个账号用 @ 或者 换行 分割 
- 定时一天一次
- cron:  11 11 * * *
-
- 无法获取到答案，所以回答问题是随机回答
+ cron: 30 10 * * *
  */
 
- const $ = new Env('漫步者');
+ const $ = new Env("漫步者");
  const notify = $.isNode() ? require('./sendNotify') : '';
  const crypto = require('crypto');
  const {log} = console;

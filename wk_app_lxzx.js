@@ -1,18 +1,13 @@
 /**
- 作者：临渊
- 日期：6-23
  软件：联想智选 （签到获得延保券，乐豆）
- 功能：签到
  抓包：可抓可不抓，不抓直接填一个 lzzxApp 账号&密码  抓包的话抓一个登陆包，里面有baseinfo，再填到 lxzxBaseinfo （lxzxApp这个变量一定要填）
  变量：lzzxApp='账号&密码@xxxx '  多个账号用 @ 或者 换行 分割
- 定时一天一次
- cron: 30 10 * * *
+ cron: 40 10 * * *
 
- 8-18 修复了签到失败
  */
 
 process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";//提示Warning正常现象
-const $ = new Env('联想智选签到');
+const $ = new Env("联想智选签到");
 const notify = $.isNode() ? require('./sendNotify') : '';
 const {log} = console;
 const cryptojs = require('crypto-js');

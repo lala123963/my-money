@@ -1,7 +1,8 @@
 /*
-cron "5 1 * * *" wx-bhxcy.js, tag:渤海宣传员
+*渤海宣传员微信小程序-弄好后不要再登录小程序，api.yd.ihaoqu.com，末尾是getUserlnfo，请求-Raw
+cron: 10 9 * * * 
 */
-const $ = new Env('渤海宣传员');
+const $ = new Env("渤海宣传员");
 let envSplitor = ['\n','@']
 let httpResult, httpReq, httpResp
 

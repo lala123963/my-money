@@ -8,10 +8,10 @@ by:小手冰凉 tg:@chianPLA
 ===========================
 [task_local]
 #微信签到领现金
-16 0,5 * * * jd_cash_wx.js, tag=微信签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+cron: 16 0,5 * * * jd_cash_wx.js, tag=微信签到领现金, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
  */
 
-const $ = new Env('微信签到领现金');
+const $ = new Env("微信签到领现金");
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

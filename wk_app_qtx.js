@@ -1,18 +1,12 @@
 /*
-  作者：临渊
-  日期：5-21
   软件：青碳行
-  功能：签到、分享、回答问题、收取精力值
   抓包：carbon.lcago.cn 这个域名 请求体 的body部分的 token 和 deviceCoding
   变量：export qtxtk='token1&deviceCoding1@token2&deviceCoding2'  多个账号用@或者换行分割 
   抓包之前请先把这些任务都点一下，手动开启一下，不然跑不了
-  收益不高，一天一毛 兑换的是 数字人民币 没有的，不知道这是啥或者嫌少的可以不跑
-  tk有效时间应该挺长的，写了到现在没过期过，闲的没事可以多创几个号和几个钱包，到时候转到一个钱包就行了
-  定时一天一次
-  cron：10 10 * * *
+  cron: 20 10 * * *
  */
 
- const $ = Env('青碳行');
+ const $ = Env("青碳行");
  const notify = $.isNode() ? require('./sendNotify') : '';
  const Notify = 1; //0为关闭通知，1为打开通知,默认为1
  const debug = 0; //0为关闭调试，1为打开调试,默认为0
