@@ -3,7 +3,7 @@
 每天随机运行一次, 无需指定特定时间
  */
 
-const $ = new Env('京东保价');
+const $ = new Env('京东价保一对一推送版');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const jsdom = $.isNode() ? require('jsdom') : '';
@@ -18,6 +18,12 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 const JD_API_HOST = 'https://api.m.jd.com/';
+
+let WP_APP_TOKEN_ONE = "";
+let strmessagebyone="";
+if ($.isNode() && process.env.WP_APP_TOKEN_ONE) {
+	WP_APP_TOKEN_ONE = process.env.WP_APP_TOKEN_ONE;
+}
 
 !(async () => {
     if (!cookiesArr[0]) {
@@ -47,9 +53,12 @@ const JD_API_HOST = 'https://api.m.jd.com/';
                 }
                 continue
             }
-
+			strmessagebyone=""
             await price()
-            await $.wait(parseInt(Math.random()*2500+2500,10))
+			if (strmessagebyone && $.isNode() && WP_APP_TOKEN_ONE) {
+				await notify.sendNotifybyWxPucher("京东保价",strmessagebyone, `${$.UserName}`);				
+			}
+            await $.wait(2000)
         }
     }
     if (allMessage) {
