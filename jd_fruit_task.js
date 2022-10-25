@@ -9,7 +9,17 @@
 一天只能帮助3个人。多出的助力码无效
 ==========================Quantumultx=========================
 [task_local]
-1 1 1 1 1 jd_fruit_task.js
+#jd免费水果
+5 6-18/6 * * * jd_fruit_task.js, tag=东东农场日常任务, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jdnc.png, enabled=true
+=========================Loon=============================
+[Script]
+cron "5 6-18/6 * * *" script-path=jd_fruit_task.js,tag=东东农场日常任务
+
+=========================Surge============================
+东东农场日常任务 = type=cron,cronexp="5 6-18/6 * * *",wake-system=1,timeout=3600,script-path=jd_fruit_task.js
+
+=========================小火箭===========================
+东东农场日常任务 = type=cron,script-path=jd_fruit_task.js, cronexpr="5 6-18/6 * * *", timeout=3600, enable=true
 
 export DO_TEN_WATER_AGAIN="" 默认再次浇水
 
@@ -39,22 +49,6 @@ let jdFruitBeanCard = false; //农场使用水滴换豆卡(如果出现限时活
 let randomCount = $.isNode() ? 20 : 5;
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
 const urlSchema = `openjd://virtual?params=%7B%20%22category%22:%20%22jump%22,%20%22des%22:%20%22m%22,%20%22url%22:%20%22https://h5.m.jd.com/babelDiy/Zeus/3KSjXqQabiTuD1cJ28QskrpWoBKT/index.html%22%20%7D`;
-
-let WP_APP_TOKEN_ONE = "";
-/* if ($.isNode()) {
-	if (process.env.WP_APP_TOKEN_ONE) {		
-		WP_APP_TOKEN_ONE = process.env.WP_APP_TOKEN_ONE;
-	}
-}
-
-if (WP_APP_TOKEN_ONE) {
-    console.log(`检测到已配置Wxpusher的Token，启用一对一推送...`);
-    if (NowHour <9 || NowHour > 21) {
-        WP_APP_TOKEN_ONE = "";
-        console.log(`农场只在9点后和22点前启用一对一推送，故此次暂时取消一对一推送...`);
-    }
-} else
-    console.log(`检测到未配置Wxpusher的Token，禁用一对一推送...`); */
 let lnrun = 0;
 !(async() => {
 	await requireConfig();
@@ -121,9 +115,6 @@ async function jdFruit() {
                 if ($.isNode()) {
                     await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName || $.UserName}水果已可领取`, `【京东账号${$.index}】${$.nickName || $.UserName}\n【提醒⏰】${$.farmInfo.farmUserPro.name}已可领取\n请去京东APP或微信小程序查看`);
                 }
-		if ($.isNode() && WP_APP_TOKEN_ONE) {
-			await notify.sendNotifybyWxPucher($.name, `【京东账号】${$.nickName || $.UserName}\n【提醒⏰】${$.farmInfo.farmUserPro.name}已可领取\n【领取步骤】京东->我的->东东农场兑换京东红包,可以用于京东app的任意商品.`, `${$.UserName}`);
-		}
                 return
             } else if ($.farmInfo.treeState === 1) {
                 console.log(`\n${$.farmInfo.farmUserPro.name}种植中...\n`)
@@ -360,9 +351,6 @@ async function doTenWater() {
             if ($.isNode()) {
                 await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName || $.UserName}水果已可领取`, `京东账号${$.index} ${$.nickName || $.UserName}\n${$.farmInfo.farmUserPro.name}已可领取`);
             }
-                if ($.isNode() && WP_APP_TOKEN_ONE) {
-                    await notify.sendNotifybyWxPucher($.name, `【京东账号】${$.nickName || $.UserName}\n【提醒⏰】${$.farmInfo.farmUserPro.name}已可领取\n【领取步骤】京东->我的->东东农场兑换京东红包,可以用于京东app的任意商品.`, `${$.UserName}`);
-                }
         }
     } else {
         console.log('\n今日已完成10次浇水任务\n');
@@ -490,9 +478,6 @@ async function doTenWaterAgain() {
             $.done();
             if ($.isNode()) {
                 await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName || $.UserName}水果已可领取`, `京东账号${$.index} ${$.nickName || $.UserName}\n${$.farmInfo.farmUserPro.name}已可领取`);
-      }
-	  if ($.isNode() && WP_APP_TOKEN_ONE) {
-			await notify.sendNotifybyWxPucher($.name, `【京东账号】${$.nickName || $.UserName}\n【提醒⏰】${$.farmInfo.farmUserPro.name}已可领取\n【领取步骤】京东->我的->东东农场兑换京东红包,可以用于京东app的任意商品.`, `${$.UserName}`);
             }
         }
     } else if (overageEnergy >= 10) {
@@ -521,9 +506,6 @@ async function doTenWaterAgain() {
             $.done();
             if ($.isNode()) {
                 await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName || $.UserName}水果已可领取`, `京东账号${$.index} ${$.nickName || $.UserName}\n${$.farmInfo.farmUserPro.name}已可领取`);
-      }
-	  if ($.isNode() && WP_APP_TOKEN_ONE) {
-			await notify.sendNotifybyWxPucher($.name, `【京东账号】${$.nickName || $.UserName}\n【提醒⏰】${$.farmInfo.farmUserPro.name}已可领取\n【领取步骤】京东->我的->东东农场兑换京东红包,可以用于京东app的任意商品.`, `${$.UserName}`);
             }
         }
     } else {

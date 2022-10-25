@@ -47,17 +47,6 @@ if ($.isNode()) {
     cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
 }
 
-let WP_APP_TOKEN_ONE = "";
-if ($.isNode()) {
-	if (process.env.WP_APP_TOKEN_ONE) {		
-		WP_APP_TOKEN_ONE = process.env.WP_APP_TOKEN_ONE;
-	}
-}
-if(WP_APP_TOKEN_ONE)
-	console.log(`检测到已配置Wxpusher的Token，启用一对一推送...`);
-else
-	console.log(`检测到未配置Wxpusher的Token，禁用一对一推送...`);
-
 console.log(`共${cookiesArr.length}个京东账号\n`);
 
 !(async() => {
@@ -138,9 +127,6 @@ async function jdPet() {
                 if ($.isNode()) {
                     await notify.sendNotify(`${$.name} - 账号${$.index} - ${$.nickName || $.UserName}奖品已可领取`, `京东账号${$.index} ${$.nickName || $.UserName}\n${$.petInfo.goodsInfo.goodsName}已可领取`);
                 }
-				if ($.isNode() && WP_APP_TOKEN_ONE) {
-					await notify.sendNotifybyWxPucher($.name, `【提醒⏰】${$.petInfo.goodsInfo.goodsName}已可领取\n【领取步骤】京东->我的->东东萌宠兑换京东红包,可以用于京东app的任意商品.`, `${$.UserName}`);
-				}
                 return
             } else if ($.petInfo.petStatus === 6) {
                 option['open-url'] = "openApp.jdMobile://";
