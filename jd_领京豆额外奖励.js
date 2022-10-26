@@ -7,7 +7,7 @@
 脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
 
 [Script]
-cron:23 1,18 * * * script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_bean_home.js, tag=领京豆额外奖励
+cron "23 1,18 * * *" script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_bean_home.js, tag=领京豆额外奖励
 
 ===============Surge=================
 领京豆额外奖励 = type=cron,cronexp="23 1,18 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/KingRan/JDJB/main/jd_bean_home.js
