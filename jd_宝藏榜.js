@@ -4,6 +4,7 @@
 入口：排行榜-宝藏榜
 updatetime: 2022/9/29
 author: https://github.com/6dylan6/jdpro
+cron "30 10 * * *"
  */
 
 const $ = new Env('京东宝藏榜');

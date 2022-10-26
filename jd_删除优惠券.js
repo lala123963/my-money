@@ -1,6 +1,6 @@
 /*
 
-0 0 * 6 * jd_delCoupon.js
+cron "0 0 * 6 *" jd_delCoupon.js
 
 */
 const $ = new Env('删除优惠券');

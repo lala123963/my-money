@@ -1,7 +1,7 @@
 
 /*
 京享值任务领豆，每周一次
-9 9 * * 5 jd_vipgrowth.js
+cron "9 9 * * 5" jd_vipgrowth.js
 updateTime: 2022/10/5
  */
 

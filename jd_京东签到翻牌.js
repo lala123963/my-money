@@ -1,5 +1,5 @@
 /* 
-cron 10 8 * * * jd_sign_graphics.js
+cron "10 8 * * *" jd_sign_graphics.js
 只支持nodejs环境
 需要安装依赖 
 npm i png-js 或者 npm i png-js -S

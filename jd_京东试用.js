@@ -22,7 +22,7 @@ export JD_TRY_UNIFIED="false" 默认采用不同试用组
 export JD_TRY_NUM="5" 最多跑多少个CK，默认10
 
 定时自定义，能用多久随缘了！！！
-21 */8 * * *
+cron "21 */8 * * *"
  */
 
 const $ = new Env('京东试用')

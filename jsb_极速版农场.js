@@ -7,7 +7,7 @@ export dlbtz="true" //通知打开
 
 export dlbtz="false" //通知关闭
 
-5 0-23/6 * * * jd_wsdlb.js, tag=极速版我是大老板农场, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+cron "5 0-23/6 * * *" jd_wsdlb.js, tag=极速版我是大老板农场, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 
 

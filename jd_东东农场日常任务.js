@@ -9,7 +9,7 @@
 一天只能帮助3个人。多出的助力码无效
 ==========================Quantumultx=========================
 [task_local]
-15 5-17/6 * * * jd_fruit_task.js
+cron "15 5-17/6 * * *" jd_fruit_task.js
 
 export DO_TEN_WATER_AGAIN="" 默认再次浇水
 
