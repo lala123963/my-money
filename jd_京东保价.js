@@ -1,10 +1,10 @@
 /*
 京东保价
 每天随机运行一次, 无需指定特定时间
-cron "21 10 * * *"
+cron: "21 10 * * *"
  */
 
-const $ = new Env('京东价保一对一推送版');
+const $ = new Env('京东价保');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const jsdom = $.isNode() ? require('jsdom') : '';
