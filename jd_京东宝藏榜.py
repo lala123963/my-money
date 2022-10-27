@@ -2,13 +2,14 @@
 # -*- coding: utf-8 -*-
 
 """
-File: jd_jingBeanReceive.py(plus专属礼-天天领福利)
+File: jd_doTreasureRank.py(京东宝藏榜)
 Author: HarbourJ
 Date: 2022/9/19 22:00
 TG: https://t.me/HarbourToulu
 TgChat: https://t.me/HarbourSailing
 cron: 30 0 0 * * *
-new Env('plus专属礼-天天领福利');
+new Env('京东宝藏榜');
+ActivityEntry: 首页排行榜-宝藏榜
 """
 
 import requests, sys, os, re, time
@@ -39,23 +40,37 @@ def randomString(e, flag=False):
     return ''.join(n)
 
 def doTask(cookie):
-    url = "https://api.m.jd.com/client.action?functionId=jingBeanReceive"
-    payload = "avifSupport=1&body=%7B%22encryptAssignmentId%22%3A%226bzcu8ZNPHFhuWZC55MhLgJCPiW%22%2C%22firstType%22%3A1%7D&build=168311&client=apple&clientVersion=11.2.7&d_brand=apple&d_model=iPhone10%2C3&ef=1&eid=eidI21de81220cs4zwVxJDcwTxubBP9xskb8as8Fcpw827kSwFhxTs/xaamHiBAVj7C/YnZR%2BmODl1OUeH7f5I4xm/mIct00P8O2cmBrp3PIKEq208Zs&ep=%7B%22ciphertype%22%3A5%2C%22cipher%22%3A%7B%22screen%22%3A%22CJOyDIeyDNC2%22%2C%22wifiBssid%22%3A%22YtPwC2VrZWPrCJKmZNO4CNS3ENUnZWUzYJSmCwDuCNS%3D%22%2C%22osVersion%22%3A%22CJUkCy4n%22%2C%22area%22%3A%22CJvpCJYmCV8zDtCzXzYzCtUy%22%2C%22openudid%22%3A%22DwO2Czu5YJY1DQC2EJYmCzLvYJu5DJZrDNq1ZNDsZJPvDJVuDzO0ZG%3D%3D%22%2C%22uuid%22%3A%22aQf1ZRdxb2r4ovZ1EJZhcxYlVNZSZz09%22%7D%2C%22ts%22%3A1664322556%2C%22hdid%22%3A%22JM9F1ywUPwflvMIpYPok0tt5k9kW4ArJEU3lfLhxBqw%3D%22%2C%22version%22%3A%221.0.3%22%2C%22appname%22%3A%22com.360buy.jdmobile%22%2C%22ridx%22%3A-1%7D&ext=%7B%22prstate%22%3A%220%22%2C%22pvcStu%22%3A%221%22%7D&isBackground=N&joycious=90&lang=zh_CN&networkType=wifi&networklibtype=JDNetworkBaseAF&partner=apple&rfs=0000&scope=11&sign=1068e427417088f66b6662841e9188b3&st=1664322629327&sv=111&uemps=0-0&uts=0f31TVRjBSsM4O1yK5LGrapaX3BEwS6R%2BmwPNn9dovB4gt4APFjVvh%2BoNgcWzJXrDASiBpSRQ3pc9ekEO5KCoTMPhPrXYRqXLR8bzfr3d%2B2gW/%2BNqeVTOVl22fjzmPi2glE4SD40Tb4WoZL4BC1v4ZOyc0E4NuLooRD0h6AO3RS64giA6YOFQa7z6Lnnnb8DCffGL0/zm0UQEfnIKCK8SA%3D%3D"
+    url = "https://api.m.jd.com/client.action"
+    payload = f'functionId=doTreasureInteractive&body=%7B%22type%22%3A%223%22%2C%22itemId%22%3A%22%22%7D&appid=newrank_action&clientVersion=11.2.2&client=wh5&ext=%7B%22prstate%22%3A%220%22%7D'
     headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-        'Cookie': cookie,
         'Host': 'api.m.jd.com',
-        'User-Agent': ua
+        'Accept': '*/*',
+        'Accept-Language': 'zh-CN,zh-Hans;q=0.9',
+        'Accept-Encoding': 'gzip, deflate, br',
+        'Content-Type': 'application/x-www-form-urlencoded',
+        'Origin': 'https://h5.m.jd.com',
+        'User-Agent': ua,
+        'Connection': 'keep-alive',
+        'Referer': 'https://h5.m.jd.com/',
+        'request-from': 'native',
+        'Cookie': cookie
     }
     response = requests.request("POST", url, headers=headers, data=payload)
     try:
         res = response.json()
         if res['isSuccess']:
-            print(f"🎉 {res['data']['windowsContent']}")
+            result = res['result']
+            if result['rewardType'] == 20001:
+                print(f"🎉{result['rewardTitle']} {result['discount']}")
+            else:
+                print("已经领过了,明天再来")
+
         else:
-            print(f"⛈ {res['message']}")
+            print(res)
     except:
         print(response.text)
+
+
 
 if __name__ == '__main__':
     try:
