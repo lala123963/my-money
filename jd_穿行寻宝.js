@@ -1,6 +1,6 @@
 /*
 任务
-cron "10 */2 * * *" jd_cxxb_new.js
+ 10 10 * * * jd_cxxb_new.js
  默认定时不跑，自己定时
  updatetime:2022/10/26 做微信任务和领宝箱奖励
 */
