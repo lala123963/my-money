@@ -1,5 +1,5 @@
 /*
- cron "18 6 * * *" jd_speed_signfree_Mod.js 签到免单
+ cron "18 3 * * *" jd_speed_signfree_Mod.js 签到免单
 */
 const $ = new Env('京东极速签到免单')
 const notify = $.isNode() ? require('./sendNotify') : '';

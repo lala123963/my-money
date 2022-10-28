@@ -1,4 +1,4 @@
-//cron "20 6,13,22 * * *" m_jd_farm_automation.js
+//cron "20 22 * * *" m_jd_farm_automation.js
 //问题反馈:https://t.me/Wall_E_Channel
 const {Env} = require('./magic');
 const $ = new Env('M农场自动化');

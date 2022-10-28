@@ -1,5 +1,5 @@
 /*
-cron "22 15 * * *" jd_try_notify.js
+cron "22 7 * * *" jd_try_notify.js
  */
 const $ = new Env('京东试用待领取通知')
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

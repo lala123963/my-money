@@ -1,7 +1,7 @@
 /*
 10豆 
 入口：排行榜-宝藏榜
-cron "10 10 * * *" jd_TreasureRank.js
+cron "30 0 0 * * *" jd_TreasureRank.js
 updatetime: 2022/9/29
 author: https://github.com/6dylan6/jdpro
  */

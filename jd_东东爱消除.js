@@ -5,7 +5,8 @@
 新手福利3天内70星兑换京豆礼包
 默认定时不跑，自己改，一天5次就行，一起冲就炸了
 默认不开启双倍奖励，会加购商品，如需开启export XXLDOUBLE='true'
-8 8 8 8 * https://raw.githubusercontent.com/11111129/jdpro/main/jd_moxigame.js 
+cron "21 9 * * *"
+https://raw.githubusercontent.com/11111129/jdpro/main/jd_moxigame.js 
 updatetime: 2022/10/12 新增双倍奖励领取，速度优化
 author: https://github.com/11111129/jdpro
 */

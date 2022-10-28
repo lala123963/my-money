@@ -2,7 +2,7 @@
  汪汪乐园
  赛跑+组队
  export JD_JOY_PARK_RUN_ASSETS="0.01"
- cron "3 1-23 * * *" jd_joy_park_run.js
+ cron "3 2-22 * * *" jd_joy_park_run.js
  */
 const $ = new Env('汪汪乐园赛跑');
 const notify = $.isNode() ? require('./sendNotify') : '';
