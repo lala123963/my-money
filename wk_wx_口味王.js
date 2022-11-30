@@ -10,8 +10,6 @@
 =================================Loon===================================
 [Script]
 cron: 0 40 0 * * * script-path=https://github.com/JDWXX/jd_job.git,tag=微信小程序-口味王
-===================================Surge================================
-微信小程序-口味王 = type=cron,cronexp="0 40 0 * * *",wake-system=1,timeout=3600,script-path=https://github.com/JDWXX/jd_job.git
 ====================================小火箭=============================
 微信小程序-口味王 = type=cron,script-path=https://github.com/JDWXX/jd_job.git, cronexpr="0 40 0 * * *", timeout=3600, enable=true
  */
