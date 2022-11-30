@@ -6,10 +6,10 @@
 =================================Quantumultx=========================
 [task_local]
 #微信小程序-口味王
-cron: 0 40 0 * * * https://github.com/JDWXX/jd_job.git, tag=微信小程序-口味王, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+0 40 0 * * * https://github.com/JDWXX/jd_job.git, tag=微信小程序-口味王, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 =================================Loon===================================
 [Script]
-cron "0 40 0 * * *" script-path=https://github.com/JDWXX/jd_job.git,tag=微信小程序-口味王
+cron: 0 40 0 * * * script-path=https://github.com/JDWXX/jd_job.git,tag=微信小程序-口味王
 ===================================Surge================================
 微信小程序-口味王 = type=cron,cronexp="0 40 0 * * *",wake-system=1,timeout=3600,script-path=https://github.com/JDWXX/jd_job.git
 ====================================小火箭=============================
