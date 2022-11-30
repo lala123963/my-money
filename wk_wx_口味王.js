@@ -7,9 +7,8 @@
 [task_local]
 #微信小程序-口味王
 0 40 0 * * * https://github.com/JDWXX/jd_job.git, tag=微信小程序-口味王, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
-=================================Loon===================================
-[Script]
-cron: 0 40 0 * * * script-path=https://github.com/JDWXX/jd_job.git,tag=微信小程序-口味王
+
+cron: 0 40 0 * * *
 ====================================小火箭=============================
 微信小程序-口味王 = type=cron,script-path=https://github.com/JDWXX/jd_job.git, cronexpr="0 40 0 * * *", timeout=3600, enable=true
  */
