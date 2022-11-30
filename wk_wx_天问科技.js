@@ -8,7 +8,7 @@
 抓包 taokeout.jutuike.com 域名header 里面XX-Token 的值 多账户 @ 或者 回车 分开 
 
 数据填入 TWtoken 变量里面
-
+cron: 10 10 * * *
 定时一天一次
 */
 const $ = new Env("天问科技-7日打卡");
