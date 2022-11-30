@@ -1,0 +1,11 @@
+ql repo https://github.com/ccwav/QLScript2.git "CkSeq|UpdateUIDtoRemark|change|gua|signfree|fruit|pet" "NoUsed|bot" "ql|sendNotify|utils|USER_AGENTS|jdCookie|JS_USER_AGENTS"
+ql repo https://github.com/KingRan/KR.git "jd_|jdCookie" "activity|backUp|cfd|lzkj|actory|jxgckc|Brand|speed_sign.js|CheckCK|validate|bean_info|beauty|winner|drawCenter|fcwb|follow|share|insight|luck_draw|wdz|opencard|prodev|wskey|wx|zdjr|tyt|sgmh|sevenDay|morningSc|couponspace|bean_sign|jd_shop|shangou|mhtask|jxmc|txzj|zjb|supermarket|kd|bean_change|kanjia|cleancart|categoryUnion|Force|jinggeng|wish|makemoneyshop|cj|joyjd|daily|qqxing|jd_sign.js|completeInfoActivity|dpqd|fansactiveall|lottery" "^jd[^_]|USER_AGENTS|function|utils|sendNotify|magic|h5sts"
+ql repo https://github.com/yml2213/javascript.git "xtwly|zhwl"
+ql repo https://e.coding.net/HelloDNS/sign/wskey.git "wskey"
+ql repo https://github.com/smiek2121/scripts.git "opencard" "" "ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js|cleancart_activity.js|jdCookie.js|sendNotify.js"
+ql repo https://github.com/leafTheFish/DeathNote.git "elm|chinaTelecomV3|sfsy"
+ql repo https://github.com/wangquanfugui233/Bilibili_Python.git "Bilibili_" "Dev_"
+ql repo https://github.com/lu0b0/ELM.git "ELM|elm"
+ql repo https://github.com/lgq-ll/my-money.git "jd_|jx_|jr_|jsb_|wk_" "" "^jd[^_]|utils|function|sign|sendNotify|ql|function|JDJR|magic|h5st|USER_AGENTS"
+ql repo https://github.com/danchaofan12138/danchaofan.git
+ql repo https://github.com/JDWXX.git
