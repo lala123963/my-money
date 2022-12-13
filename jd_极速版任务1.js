@@ -44,7 +44,7 @@ const JD_API_HOST = 'https://api.m.jd.com/', actCode = 'visa-card-001';
     
   let lnTotalAcc=Math.ceil(cookiesArr.length/3);
   console.log(`本次执行${lnTotalAcc}个账号\n`);
-  for (let i = 0; i < cookiesArr.length; i++) {
+  for (let i = 0; i < lnTotalAcc; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
       $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
